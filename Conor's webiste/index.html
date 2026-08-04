@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f8f9fa">
+	<title>Conor O'Boyle | Portfolio</title>
+	<meta name="description" content="A lean one-page portfolio for Conor O'Boyle, built from the Rezume template foundation.">
+	<meta name="author" content="Conor O'Boyle">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Conor O'Boyle | Portfolio">
+	<meta property="og:description" content="Creative computing, web design, and visual portfolio work by Conor O'Boyle.">
+	<meta property="og:image" content="rezume/images/mee.png">
+
+	<link rel="stylesheet" href="rezume/fonts/icomoon/style.css">
+	<link rel="stylesheet" href="rezume/css/bootstrap.css">
+	<link rel="stylesheet" href="rezume/css/style.css">
+	<link rel="stylesheet" href="rezume/css/aos.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="rezume/css/glightbox.min.css" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="rezume/css/aos.css">
+		<link rel="stylesheet" href="rezume/css/glightbox.min.css">
+	</noscript>
+
+	<style>
+		:root {
+			--portfolio-accent: #7f5af0;
+			--portfolio-ink: #151515;
+			--portfolio-muted: #6f6f6f;
+			--portfolio-paper: #f8f9fa;
+		}
+
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 300;
+			background: var(--portfolio-paper);
+		}
+
+		h1,
+		h2,
+		h3,
+		.nav-link,
+		.letter-spacing,
+		.proof-list blockquote,
+		.proof-list cite {
+			font-family: "HelveticaNeue-UltraLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 100;
+		}
+
+		a,
+		.site-footer .social-item:hover {
+			color: var(--portfolio-accent);
+		}
+
+		.site-navbar {
+			top: 0;
+			padding: 14px 0;
+		}
+
+		.site-navbar .container {
+			position: relative;
+		}
+
+		.site-navbar .navbar-brand {
+			border: 0;
+			color: #fff;
+			letter-spacing: 0.2em;
+			padding: 15px 20px !important;
+			text-transform: uppercase;
+		}
+
+		.site-navbar.scrolled .navbar-brand {
+			color: #111;
+		}
+
+		.dark-mode-toggle {
+			margin-left: 0;
+			margin-right: auto;
+		}
+
+		.header-socials {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-left: auto;
+		}
+
+		.header-socials a {
+			width: 32px;
+			height: 32px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			line-height: 1;
+			opacity: 0.9;
+		}
+
+		.header-socials a:hover,
+		.header-socials a:focus {
+			opacity: 1;
+		}
+
+		.site-navbar.scrolled .header-socials a {
+			color: inherit;
+		}
+
+		.site-navbar.scrolled .header-socials a:hover,
+		.site-navbar.scrolled .header-socials a:focus {
+			opacity: 1;
+		}
+
+		.header-socials .social-image img {
+			width: 30px;
+			height: 30px;
+			object-fit: contain;
+			display: block;
+		}
+
+		.header-socials .social-image--youtube {
+			width: 42px;
+		}
+
+		.header-socials .social-image--youtube img {
+			width: 52px;
+			height: 42px;
+		}
+
+		.site-hero {
+			min-height: 760px;
+			background-image: url("rezume/images/mee.png");
+			background-position: center;
+		}
+
+		.site-hero,
+		.site-hero .row {
+			height: 86vh;
+			min-height: 760px;
+		}
+
+		.site-hero:before {
+			background: rgba(0, 0, 0, 0.42);
+		}
+
+		.site-heading {
+			text-transform: uppercase;
+			font-size: clamp(30px, 4.4vw, 64px);
+			font-weight: 100 !important;
+			letter-spacing: 0.48em;
+			line-height: 1.35;
+			text-indent: 0.48em;
+			white-space: nowrap;
+		}
+
+		.site-hero h1.site-heading,
+		.site-hero h1.site-heading strong,
+		.site-heading strong {
+			line-height: 0.92;
+			font-family: "HelveticaNeue-UltraLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 100 !important;
+		}
+
+		.letter-spacing {
+			letter-spacing: 0.36em;
+			font-weight: 100 !important;
+		}
+
+		.site-hero .letter-spacing {
+			font-size: clamp(13px, 1.35vw, 22px);
+			line-height: 1.8;
+			opacity: 0.86;
+		}
+
+		.reference-list {
+			max-width: 980px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 42px 34px;
+		}
+
+		.reference-card {
+			display: grid;
+			grid-template-rows: auto 1fr;
+			gap: 20px;
+			text-align: center;
+		}
+
+		.reference-card img {
+			width: 96px;
+			height: 96px;
+			margin: 0 auto;
+			object-fit: cover;
+			border-radius: 50%;
+			filter: grayscale(1);
+		}
+
+		.reference-card blockquote {
+			margin: 0;
+			font-size: clamp(14px, 1.25vw, 17px);
+			line-height: 1.65;
+			font-weight: 200;
+			letter-spacing: 0.11em;
+			text-transform: uppercase;
+			color: #222;
+		}
+
+		.reference-card cite {
+			display: block;
+			margin-top: 12px;
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 300;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: var(--portfolio-muted);
+		}
+
+		.reference-card cite span {
+			display: block;
+			margin-top: 6px;
+			font-size: 10px;
+			letter-spacing: 0.12em;
+			line-height: 1.45;
+		}
+
+		.work-strip {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 18px;
+		}
+
+		.work-strip .work-image {
+			position: relative;
+			display: block;
+			aspect-ratio: 1 / 1;
+			overflow: hidden;
+			border-radius: 8px;
+			background: #e9ecef;
+		}
+
+		.work-strip img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.35s ease;
+		}
+
+		.work-strip .work-image:hover img {
+			transform: scale(1.04);
+		}
+
+		.project-notes {
+			margin-top: 48px;
+		}
+
+		.project-note {
+			margin-bottom: 34px;
+		}
+
+		.project-note h3 {
+			font-size: clamp(15px, 1.1vw, 19px);
+			font-weight: 200;
+			letter-spacing: 0.18em;
+			line-height: 1.55;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.project-note p {
+			max-width: 780px;
+			font-size: 18px;
+			color: var(--portfolio-muted);
+		}
+
+		.about-image {
+			border-radius: 8px;
+		}
+
+		.contact-note {
+			color: rgba(0, 0, 0, 0.55);
+		}
+
+		.site-form .form-group:last-child {
+			text-align: center;
+		}
+
+		.site-footer {
+			padding: 1.5em 0;
+		}
+
+		.site-footer .row.mb-5 {
+			margin-bottom: 1rem !important;
+		}
+
+		.site-footer p {
+			margin-bottom: 0;
+			font-size: 13px;
+		}
+
+		.site-footer .social-item {
+			width: 36px;
+			height: 36px;
+			font-size: 16px;
+			margin: 0 5px;
+		}
+
+		.btn.btn-primary {
+			background-color: #071526;
+			border-color: #071526;
+		}
+
+		.btn.btn-primary:hover,
+		.btn.btn-primary:focus {
+			background-color: #0d2138;
+			border-color: #0d2138;
+		}
+
+		[data-bs-theme="dark"] body {
+			background: #222;
+		}
+
+		[data-bs-theme="dark"] .reference-card blockquote,
+		[data-bs-theme="dark"] .project-note h3 {
+			color: #fff;
+		}
+
+		[data-bs-theme="dark"] .project-note p,
+		[data-bs-theme="dark"] .contact-note {
+			color: rgba(255, 255, 255, 0.65);
+		}
+
+		@media (max-width: 991.98px) {
+			.site-navbar .container {
+				gap: 12px;
+			}
+
+			.reference-list {
+				grid-template-columns: 1fr;
+				max-width: 720px;
+			}
+
+			.work-strip {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (max-width: 575.98px) {
+			.site-hero,
+			.site-hero .row {
+				min-height: 680px;
+			}
+
+			.site-heading {
+				font-size: clamp(24px, 8vw, 38px);
+				letter-spacing: 0.2em;
+				text-indent: 0.2em;
+			}
+
+			.letter-spacing {
+				letter-spacing: 0.16em;
+			}
+
+			.header-socials {
+				gap: 10px;
+			}
+
+			.work-strip {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.site-navbar .navbar-collapse {
+				position: absolute;
+				left: 50%;
+				width: auto;
+				flex-grow: 0;
+				transform: translateX(-50%);
+			}
+
+			.dark-mode-toggle {
+				transform: translateX(-130px);
+			}
+
+			.header-socials {
+				transform: translateX(145px);
+			}
+		}
+	</style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#pb-navbar" data-bs-offset="200">
+	<a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+	<nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar" aria-label="Main navigation">
+		<div class="container">
+			<button id="darkModeToggle" class="btn btn-link p-2 dark-mode-toggle" aria-label="Toggle dark mode">
+				<svg class="toggle-icon toggle-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+				<svg class="toggle-icon toggle-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+			</button>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-work">Work</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
+				</ul>
+			</div>
+			<div class="header-socials" aria-label="Social links">
+				<a class="social-image" href="https://open.spotify.com/artist/6i6RS0FdsxKjVvHj84qUpX?si=2kNrD1huTy6fw3UA_6nU0w" aria-label="Spotify" target="_blank" rel="noopener noreferrer"><img src="rezume/images/social/spotify-official.png" alt=""></a>
+				<a class="social-image" href="https://music.apple.com/gb/artist/conor-oboyle/1483590957" aria-label="Apple Music" target="_blank" rel="noopener noreferrer"><img src="rezume/images/social/apple-music-official.svg" alt=""></a>
+				<a class="social-image social-image--youtube" href="https://www.youtube.com/@conoroboyle1175" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><img src="rezume/images/social/youtube-official.png" alt=""></a>
+				<a class="social-image" href="https://www.instagram.com/conoroboylemusic/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="rezume/images/social/instagram-official.png" alt=""></a>
+			</div>
+		</div>
+	</nav>
+
+	<main id="main-content">
+		<section class="site-hero" id="section-home">
+			<div class="container">
+				<div class="row intro-text align-items-center justify-content-center">
+					<div class="col-md-10 text-center pt-5">
+						<h1 class="site-heading" data-aos="fade-up"><strong class="d-block">Conor O'Boyle</strong></h1>
+						<strong class="d-block text-white text-uppercase letter-spacing" data-aos="fade-up" data-aos-delay="100">Composer / Orchestrator / Producer</strong>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="site-section bg-light" id="section-proof">
+			<div class="container">
+				<div class="reference-list" aria-label="Selected references">
+					<article class="reference-card" data-aos="fade-up">
+						<img src="rezume/images/testimonials/conrad-pope.png" alt="Conrad Pope">
+						<blockquote>
+							"Imaginative and engaging. His music is characterised by turns with a lyrical sensibility and dramatic energy."
+							<cite>Conrad Pope <span>Composer, orchestrator, conductor / John Williams, Hans Zimmer</span></cite>
+						</blockquote>
+					</article>
+					<article class="reference-card" data-aos="fade-up" data-aos-delay="100">
+						<img src="rezume/images/testimonials/rory-friers.png" alt="Rory Friers">
+						<blockquote>
+							"Conor's enthusiasm and passion for great art is only matched by his ability to produce it."
+							<cite>Rory Friers <span>Composer, guitarist at And So I Watch You From Afar</span></cite>
+						</blockquote>
+					</article>
+					<article class="reference-card" data-aos="fade-up" data-aos-delay="200">
+						<img src="rezume/images/testimonials/christopher-young.png" alt="Christopher Young">
+						<blockquote>
+							"Ready to take over Hollywood."
+							<cite>Christopher Young <span>Composer / Spider-Man 3, Hellraiser, Ghost Rider</span></cite>
+						</blockquote>
+					</article>
+					<article class="reference-card" data-aos="fade-up">
+						<img src="rezume/images/testimonials/andy-hill.png" alt="Andy Hill">
+						<blockquote>
+							"His work and his thought consistently demonstrates openness, curiosity and innovation."
+							<cite>Andy Hill <span>Director of Studies at the Film Scoring Academy of Europe</span></cite>
+						</blockquote>
+					</article>
+					<article class="reference-card" data-aos="fade-up" data-aos-delay="100">
+						<img src="rezume/images/testimonials/sean-mullan.png" alt="Sean Mullan">
+						<blockquote>
+							"His work ethic offers a professional, committed and tailored style to storytelling."
+							<cite>Sean Mullan <span>Filmmaker, producer</span></cite>
+						</blockquote>
+					</article>
+					<article class="reference-card" data-aos="fade-up" data-aos-delay="200">
+						<img src="rezume/images/testimonials/andrew-tully.png" alt="Andrew Tully">
+						<blockquote>
+							"An extremely talented composer who delivers on time, even when the pressure of a deadline looms."
+							<cite>Andrew Tully <span>Producer at Fine Point Films</span></cite>
+						</blockquote>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="site-section" id="section-work">
+			<div class="container">
+				<div class="row mb-5">
+					<div class="section-heading text-center col-md-12">
+						<h2>Selected <strong>Work</strong></h2>
+					</div>
+				</div>
+
+				<div class="work-strip">
+					<a class="work-image" href="https://open.spotify.com/album/349vGhhbd1OCVNS4yrrHeR?si=wN3JJzqQSV6ElJM6KZ3L5Q" aria-label="Open Fantasia on Spotify" target="_blank" rel="noopener noreferrer">
+						<img src="rezume/images/work/fantasia.png" alt="Fantasia">
+					</a>
+					<a class="work-image" href="https://open.spotify.com/album/2rO8k84yCS55qeT3hnZ0e0?si=YdDBVmrrQweQJ7u_ZvmfWA" aria-label="Open Murder In The Badlands on Spotify" target="_blank" rel="noopener noreferrer">
+						<img src="rezume/images/work/murder-in-the-badlands.png" alt="Murder In The Badlands">
+					</a>
+					<a class="work-image" href="https://open.spotify.com/album/3X7VD83oW77mhcYWVgklJ4?si=k3QvEVqjS3ithYZI_Ul2-w" aria-label="Open Autumn Impressions on Spotify" target="_blank" rel="noopener noreferrer">
+						<img src="rezume/images/work/autumn-impressions.png" alt="Autumn Impressions">
+					</a>
+					<a class="work-image" href="https://open.spotify.com/album/0Wwv7VroUMKR9XzhYBdHrh?si=nXpkkNMLTSy2mgvjh4kW-Q" aria-label="Open Welcome to Platonic Shapes on Spotify" target="_blank" rel="noopener noreferrer">
+						<img src="rezume/images/work/welcome-to-platonic-shapes.png" alt="Welcome to Platonic Shapes">
+					</a>
+				</div>
+
+				<div class="row project-notes">
+					<div class="col-lg-3 col-md-6">
+						<article class="project-note" data-aos="fade-up">
+							<h3>Fantasia</h3>
+						</article>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<article class="project-note" data-aos="fade-up" data-aos-delay="100">
+							<h3>Murder In The Badlands</h3>
+						</article>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<article class="project-note" data-aos="fade-up" data-aos-delay="200">
+							<h3>Autumn Impressions</h3>
+						</article>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<article class="project-note" data-aos="fade-up" data-aos-delay="300">
+							<h3>Welcome to Platonic Shapes</h3>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="site-section bg-light" id="section-about">
+			<div class="container">
+				<div class="row mb-5 align-items-center">
+					<div class="col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+						<img src="rezume/images/me-16.png" alt="Conor O'Boyle" class="img-fluid about-image">
+					</div>
+					<div class="col-lg-7 ps-lg-5">
+						<div class="section-heading">
+							<h2>About <strong>Me</strong></h2>
+						</div>
+						<p class="lead">Conor O'Boyle is a Northern Irish composer, orchestrator and producer whose work moves between concert music, screen composition and contemporary production.</p>
+						<p>His writing is rooted in strong melodic instinct, dramatic shape and a close attention to atmosphere. Across projects including <em>Fantasia</em>, <em>Murder In The Badlands</em>, <em>Autumn Impressions</em> and <em>Welcome to Platonic Shapes</em>, Conor brings together orchestral colour, emotional clarity and a collaborative approach to storytelling.</p>
+						<p>Based in Northern Ireland, Conor continues to develop a body of work across film, media and independent music projects, with a focus on creating music that supports the image, serves the story and leaves a lasting emotional impression.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="site-section" id="section-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 mb-5">
+						<div class="section-heading text-center">
+							<h2>Contact <strong>Me</strong></h2>
+						</div>
+					</div>
+
+					<div class="col-md-8 col-lg-6 mx-auto">
+						<form method="post" action="contact.php" class="site-form">
+							<div class="form-group mb-3">
+								<input name="name" type="text" class="form-control px-3 py-2" placeholder="First name" autocomplete="given-name" required>
+							</div>
+							<div class="form-group mb-3">
+								<input name="last_name" type="text" class="form-control px-3 py-2" placeholder="Last name" autocomplete="family-name">
+							</div>
+							<div class="form-group mb-3">
+								<input name="email" type="email" class="form-control px-3 py-2" placeholder="Email" autocomplete="email" required>
+							</div>
+							<div class="form-group mb-4">
+								<textarea name="comments" class="form-control px-3 py-2" cols="30" rows="6" placeholder="Write a message" required></textarea>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary px-4 py-2" value="Send Message">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row mb-5">
+				<p class="col-12 text-center">
+					Copyright &copy; <script>document.write(new Date().getFullYear());</script> Conor O'Boyle.
+				</p>
+			</div>
+			<div class="row mb-5">
+				<div class="col-md-12 text-center">
+					<p>
+						<a href="#section-work" class="social-item" aria-label="Portfolio"><span class="icon-briefcase" aria-hidden="true"></span></a>
+						<a href="#section-contact" class="social-item" aria-label="Contact"><span class="icon-mail" aria-hidden="true"></span></a>
+						<a href="#section-home" class="social-item" aria-label="Back to top"><span class="icon-arrow-up" aria-hidden="true"></span></a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="rezume/js/bootstrap.bundle.min.js"></script>
+	<script src="rezume/js/glightbox.min.js"></script>
+	<script src="rezume/js/aos.js"></script>
+	<script src="rezume/js/main.js"></script>
+</body>
+</html>
