@@ -57,6 +57,27 @@
 			padding: 14px 0;
 		}
 
+		.site-navbar .navbar-nav .nav-link {
+			color: rgba(255, 255, 255, 0.96) !important;
+			opacity: 1;
+		}
+
+		.site-navbar .navbar-nav .nav-link:hover,
+		.site-navbar .navbar-nav .nav-link:focus,
+		.site-navbar .navbar-nav .nav-link.active {
+			color: #fff !important;
+		}
+
+		.site-navbar.scrolled .navbar-nav .nav-link {
+			color: rgba(17, 17, 17, 0.84) !important;
+		}
+
+		.site-navbar.scrolled .navbar-nav .nav-link:hover,
+		.site-navbar.scrolled .navbar-nav .nav-link:focus,
+		.site-navbar.scrolled .navbar-nav .nav-link.active {
+			color: #111 !important;
+		}
+
 		.site-navbar .container {
 			position: relative;
 		}
@@ -195,6 +216,12 @@
 			filter: grayscale(1);
 		}
 
+		.reference-card img.reference-image--lift {
+			filter: grayscale(1) brightness(1.2) contrast(1.16) saturate(1.04);
+			image-rendering: auto;
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+		}
+
 		.reference-card blockquote {
 			margin: 0;
 			font-size: clamp(14px, 1.25vw, 17px);
@@ -250,6 +277,169 @@
 			transform: scale(1.04);
 		}
 
+		.work-audio {
+			max-width: 860px;
+			margin: 18px auto 0;
+			border-top: 1px solid rgba(0, 0, 0, 0.14);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+		}
+
+		.audio-player {
+			display: grid;
+			grid-template-columns: 42px minmax(0, 1fr) auto;
+			align-items: center;
+			gap: 16px;
+			padding: 18px 0;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		}
+
+		.audio-player:last-child {
+			border-bottom: 0;
+		}
+
+		.audio-toggle {
+			width: 42px;
+			height: 42px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid rgba(0, 0, 0, 0.36);
+			border-radius: 50%;
+			background: transparent;
+			color: var(--portfolio-ink);
+			transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+		}
+
+		.audio-toggle:hover,
+		.audio-toggle:focus {
+			border-color: var(--portfolio-accent);
+			color: var(--portfolio-accent);
+			transform: translateY(-1px);
+		}
+
+		.audio-icon {
+			width: 0;
+			height: 0;
+			margin-left: 3px;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 12px solid currentColor;
+		}
+
+		.audio-player.is-playing .audio-icon {
+			width: 12px;
+			height: 16px;
+			margin-left: 0;
+			border: 0;
+			background: linear-gradient(to right, currentColor 0 34%, transparent 34% 66%, currentColor 66% 100%);
+		}
+
+		.audio-copy {
+			min-width: 0;
+		}
+
+		.audio-title {
+			display: block;
+			margin-bottom: 3px;
+			overflow: hidden;
+			color: var(--portfolio-ink);
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: 0.16em;
+			line-height: 1.4;
+			text-overflow: ellipsis;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+
+		.audio-description {
+			display: block;
+			margin-bottom: 9px;
+			overflow: hidden;
+			color: var(--portfolio-muted);
+			font-size: 11px;
+			letter-spacing: 0.13em;
+			line-height: 1.35;
+			text-overflow: ellipsis;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+
+		.audio-range {
+			width: 100%;
+			height: 3px;
+			display: block;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			background: linear-gradient(to right, var(--portfolio-accent) 0%, var(--portfolio-accent) var(--progress, 0%), rgba(0, 0, 0, 0.18) var(--progress, 0%), rgba(0, 0, 0, 0.18) 100%);
+			cursor: pointer;
+			appearance: none;
+		}
+
+		.audio-range::-webkit-slider-thumb {
+			width: 0;
+			height: 0;
+			appearance: none;
+		}
+
+		.audio-range::-moz-range-thumb {
+			width: 0;
+			height: 0;
+			border: 0;
+		}
+
+		.audio-time {
+			min-width: 78px;
+			color: var(--portfolio-muted);
+			font-size: 13px;
+			font-variant-numeric: tabular-nums;
+			text-align: right;
+		}
+
+		.work-video {
+			max-width: 980px;
+			margin: 48px auto 0;
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 24px;
+		}
+
+		.work-video-item {
+			min-width: 0;
+		}
+
+		.work-video-heading {
+			margin-top: 16px;
+			text-align: center;
+		}
+
+		.work-video-heading span {
+			display: block;
+			color: var(--portfolio-ink);
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: 0.15em;
+			line-height: 1.5;
+			text-transform: uppercase;
+		}
+
+		.video-embed {
+			position: relative;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+			border-radius: 8px;
+			background: #111;
+		}
+
+		.video-embed iframe {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
 		.project-notes {
 			margin-top: 48px;
 		}
@@ -275,6 +465,36 @@
 
 		.about-image {
 			border-radius: 8px;
+		}
+
+		.about-heading-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+		}
+
+		.about-heading-row .section-heading {
+			margin-bottom: 0;
+		}
+
+		.about-social-link {
+			display: inline-flex;
+			align-items: center;
+			opacity: 0.92;
+			transition: opacity 0.2s ease, transform 0.2s ease;
+		}
+
+		.about-social-link:hover,
+		.about-social-link:focus {
+			opacity: 1;
+			transform: translateY(-1px);
+		}
+
+		.about-social-link img {
+			width: 76px;
+			height: auto;
+			display: block;
 		}
 
 		.contact-note {
@@ -330,6 +550,35 @@
 			color: rgba(255, 255, 255, 0.65);
 		}
 
+		[data-bs-theme="dark"] .work-audio {
+			border-color: rgba(255, 255, 255, 0.22);
+		}
+
+		[data-bs-theme="dark"] .audio-player {
+			border-bottom-color: rgba(255, 255, 255, 0.12);
+		}
+
+		[data-bs-theme="dark"] .audio-toggle {
+			border-color: rgba(255, 255, 255, 0.5);
+			color: #fff;
+		}
+
+		[data-bs-theme="dark"] .audio-title {
+			color: #fff;
+		}
+
+		[data-bs-theme="dark"] .audio-description {
+			color: rgba(255, 255, 255, 0.56);
+		}
+
+		[data-bs-theme="dark"] .work-video-heading span {
+			color: #fff;
+		}
+
+		[data-bs-theme="dark"] .audio-range {
+			background: linear-gradient(to right, var(--portfolio-accent) 0%, var(--portfolio-accent) var(--progress, 0%), rgba(255, 255, 255, 0.24) var(--progress, 0%), rgba(255, 255, 255, 0.24) 100%);
+		}
+
 		@media (max-width: 991.98px) {
 			.site-navbar .container {
 				gap: 12px;
@@ -342,6 +591,15 @@
 
 			.work-strip {
 				grid-template-columns: repeat(2, 1fr);
+			}
+
+			.work-audio {
+				max-width: 680px;
+			}
+
+			.work-video {
+				max-width: 620px;
+				grid-template-columns: 1fr;
 			}
 		}
 
@@ -367,6 +625,22 @@
 
 			.work-strip {
 				grid-template-columns: 1fr;
+			}
+
+			.audio-player {
+				grid-template-columns: 38px minmax(0, 1fr);
+				gap: 13px;
+			}
+
+			.audio-toggle {
+				width: 38px;
+				height: 38px;
+			}
+
+			.audio-time {
+				grid-column: 2;
+				min-width: 0;
+				text-align: left;
 			}
 		}
 
@@ -442,7 +716,7 @@
 						</blockquote>
 					</article>
 					<article class="reference-card" data-aos="fade-up" data-aos-delay="100">
-						<img src="rezume/images/testimonials/rory-friers.png" alt="Rory Friers">
+						<img class="reference-image--lift" src="rezume/images/testimonials/rory-friers.png" alt="Rory Friers">
 						<blockquote>
 							"Conor's enthusiasm and passion for great art is only matched by his ability to produce it."
 							<cite>Rory Friers <span>Composer, guitarist at And So I Watch You From Afar</span></cite>
@@ -456,7 +730,7 @@
 						</blockquote>
 					</article>
 					<article class="reference-card" data-aos="fade-up">
-						<img src="rezume/images/testimonials/andy-hill.png" alt="Andy Hill">
+						<img class="reference-image--lift" src="rezume/images/testimonials/andy-hill.png" alt="Andy Hill">
 						<blockquote>
 							"His work and his thought consistently demonstrates openness, curiosity and innovation."
 							<cite>Andy Hill <span>Director of Studies at the Film Scoring Academy of Europe</span></cite>
@@ -470,7 +744,7 @@
 						</blockquote>
 					</article>
 					<article class="reference-card" data-aos="fade-up" data-aos-delay="200">
-						<img src="rezume/images/testimonials/andrew-tully.png" alt="Andrew Tully">
+						<img class="reference-image--lift" src="rezume/images/testimonials/andrew-tully.png" alt="Andrew Tully">
 						<blockquote>
 							"An extremely talented composer who delivers on time, even when the pressure of a deadline looms."
 							<cite>Andrew Tully <span>Producer at Fine Point Films</span></cite>
@@ -525,6 +799,118 @@
 						</article>
 					</div>
 				</div>
+
+				<div class="work-audio" aria-label="Selected listening" data-aos="fade-up">
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play Murder In The Badlands"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">Murder In The Badlands</span>
+							<span class="audio-description">Main Title</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="Murder In The Badlands progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Murder In the Badlands - Main Title.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play Chris D'Who"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">Chris D'Who</span>
+							<span class="audio-description">Classic Italian Orchestral</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="Chris D'Who progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Nino Rota:Vintage Italian Orchestral.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play The Lives of Chris D'Rose"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">The Lives of Chris D'Rose</span>
+							<span class="audio-description">Dark Modern Underscore</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="The Lives of Chris D'Rose progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Stand Up - Entering the Labs.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play The Boxer"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">The Boxer</span>
+							<span class="audio-description">Moody New York Jazz</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="The Boxer progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Moody Jazz.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play The Hero's Journey"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">The Hero's Journey</span>
+							<span class="audio-description">Hollywood Orchestral</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="The Hero's Journey progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Hollywood Action.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play Begin Again"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">Begin Again</span>
+							<span class="audio-description">Modern Driving Electronica</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="Begin Again progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Modern Driving Electronic.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play Secrets &amp; Lies"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">Secrets &amp; Lies</span>
+							<span class="audio-description">Icelandic Underscore</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="Secrets &amp; Lies progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Icelandic Underscore.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play Jump in"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">Jump in</span>
+							<span class="audio-description">Commercial Hip-Hop</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="Jump in progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/Commcerical Hip-Hop.mp3" type="audio/mpeg"></audio>
+					</div>
+					<div class="audio-player">
+						<button class="audio-toggle" type="button" aria-label="Play Rescue Me"><span class="audio-icon" aria-hidden="true"></span></button>
+						<div class="audio-copy">
+							<span class="audio-title">Rescue Me</span>
+							<span class="audio-description">80's Cinematic Rock</span>
+							<input class="audio-range" type="range" min="0" max="100" value="0" step="0.1" aria-label="Rescue Me progress">
+						</div>
+						<span class="audio-time">00:00/00:00</span>
+						<audio preload="metadata"><source src="audio/80's Cinematic.mp3" type="audio/mpeg"></audio>
+					</div>
+				</div>
+
+				<div class="work-video" data-aos="fade-up" aria-label="Selected video">
+					<div class="work-video-item">
+						<div class="video-embed">
+							<iframe src="https://www.youtube.com/embed/51RNPisoIxU" title="Fantasia for Strings &amp; Harp video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+						<div class="work-video-heading">
+							<span>Fantasia for Strings &amp; Harp</span>
+						</div>
+					</div>
+					<div class="work-video-item">
+						<div class="video-embed">
+							<iframe src="https://www.youtube.com/embed/wqeeqaCZW5g" title="Operation Pablo - End Titles video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+						<div class="work-video-heading">
+							<span>Operation Pablo - End Titles</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -535,12 +921,21 @@
 						<img src="rezume/images/me-16.png" alt="Conor O'Boyle" class="img-fluid about-image">
 					</div>
 					<div class="col-lg-7 ps-lg-5">
-						<div class="section-heading">
-							<h2>About <strong>Me</strong></h2>
+						<div class="about-heading-row mb-4">
+							<div class="section-heading">
+								<h2>About <strong>Me</strong></h2>
+							</div>
+							<a class="about-social-link" href="https://www.imdb.com/name/nm12770242/?ref_=fn_t_1" aria-label="View Conor O'Boyle on IMDb" target="_blank" rel="noopener noreferrer">
+								<img src="rezume/images/social/imdb-official.svg" alt="IMDb">
+							</a>
 						</div>
-						<p class="lead">Conor O'Boyle is a Northern Irish composer, orchestrator and producer whose work moves between concert music, screen composition and contemporary production.</p>
-						<p>His writing is rooted in strong melodic instinct, dramatic shape and a close attention to atmosphere. Across projects including <em>Fantasia</em>, <em>Murder In The Badlands</em>, <em>Autumn Impressions</em> and <em>Welcome to Platonic Shapes</em>, Conor brings together orchestral colour, emotional clarity and a collaborative approach to storytelling.</p>
-						<p>Based in Northern Ireland, Conor continues to develop a body of work across film, media and independent music projects, with a focus on creating music that supports the image, serves the story and leaves a lasting emotional impression.</p>
+						<p>Conor O'Boyle is an Irish composer, producer and orchestrator from Derry/Londonderry.</p>
+						<p>His work for film and television includes the BBC documentary series <em>Murder in the Badlands</em>, Netflix's <em>HYFIN</em>, TG4's <em>Colmille: An Naomí Dána</em>, and RTÉ/Fine Point Films' <em>The Agreement</em> and <em>The Dodger</em>. Recent screen credits include <em>The Boxer</em>, <em>Operation Pablo</em>, <em>Minsitter</em>, <em>Playing Peter</em> and <em>Stand Up</em>. His score for <em>After the Bomb</em> formed part of a film recognised with Best Short Documentary at Galway Film Fleadh in 2024 and Best Short Documentary at Beverly Hills Film Festival in 2025.</p>
+						<p>Alongside his screen work, Conor maintains an active concert music practice spanning orchestral, piano, string quartet and chamber works. <em>Fantasia for Strings and Harp</em> reimagines the expressive colours of the Romantic orchestra through a contemporary lens, while <em>Autumn Impressions</em> explores a more intimate piano-led language. Across these works, his writing is shaped by lyrical melody, harmonic warmth, fluid musical structures and a close attention to texture and colour.</p>
+						<p>As a producer and recording artist, Conor's work also extends into contemporary music. <em>Welcome to Platonic Shapes</em> explores jazz, pop, rock and electronic influences, bringing together songcraft, instrumental colour and modern production. He also contributed string arrangements to <em>Jettison!</em>, the 2022 project by Northern Ireland's And So I Watch You From Afar, nominated for the Northern Ireland Music Prize. The album received widespread critical acclaim, with <em>Kerrang!</em> describing it as "a magnificent blend of punchy post-rock and ethereal orchestration", while <em>Veil of Sound</em> praised how the string arrangements supported the other instruments and gave the score "a really rich feel".</p>
+						<p>His music has been recorded at Windmill Lane Studios in Dublin and by the European Recording Orchestra in Sofia, and performed at venues including The Sage Gateshead and London's Southbank Centre.</p>
+						<p>Conor is also a lecturer with the Film Scoring Academy of Europe, teaching on the Masters in Film Scoring and Film Scoring Summer Programme.</p>
+						<p>Based in Derry/Donegal. Works worldwide.</p>
 					</div>
 				</div>
 			</div>
@@ -602,5 +997,83 @@
 	<script src="rezume/js/glightbox.min.js"></script>
 	<script src="rezume/js/aos.js"></script>
 	<script src="rezume/js/main.js"></script>
+	<script>
+		(() => {
+			const players = Array.from(document.querySelectorAll(".audio-player"));
+
+			const formatTime = (seconds) => {
+				if (!Number.isFinite(seconds)) {
+					return "00:00";
+				}
+
+				const rounded = Math.max(0, Math.floor(seconds));
+				const minutes = String(Math.floor(rounded / 60)).padStart(2, "0");
+				const secs = String(rounded % 60).padStart(2, "0");
+				return `${minutes}:${secs}`;
+			};
+
+			const setProgress = (range, progress) => {
+				range.value = progress;
+				range.style.setProperty("--progress", `${progress}%`);
+			};
+
+			players.forEach((player) => {
+				const audio = player.querySelector("audio");
+				const button = player.querySelector(".audio-toggle");
+				const range = player.querySelector(".audio-range");
+				const time = player.querySelector(".audio-time");
+				const title = player.querySelector(".audio-title").textContent.trim();
+
+				const updateTime = () => {
+					const progress = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+					setProgress(range, progress);
+					time.textContent = `${formatTime(audio.currentTime)}/${formatTime(audio.duration)}`;
+				};
+
+				button.addEventListener("click", () => {
+					players.forEach((otherPlayer) => {
+						if (otherPlayer === player) {
+							return;
+						}
+
+						const otherAudio = otherPlayer.querySelector("audio");
+						otherAudio.pause();
+					});
+
+					if (audio.paused) {
+						audio.play();
+					} else {
+						audio.pause();
+					}
+				});
+
+				range.addEventListener("input", () => {
+					if (!audio.duration) {
+						return;
+					}
+
+					audio.currentTime = (Number(range.value) / 100) * audio.duration;
+					setProgress(range, Number(range.value));
+				});
+
+				audio.addEventListener("loadedmetadata", updateTime);
+				audio.addEventListener("timeupdate", updateTime);
+				audio.addEventListener("play", () => {
+					player.classList.add("is-playing");
+					button.setAttribute("aria-label", `Pause ${title}`);
+				});
+				audio.addEventListener("pause", () => {
+					player.classList.remove("is-playing");
+					button.setAttribute("aria-label", `Play ${title}`);
+				});
+				audio.addEventListener("ended", () => {
+					audio.currentTime = 0;
+					updateTime();
+				});
+
+				updateTime();
+			});
+		})();
+	</script>
 </body>
 </html>

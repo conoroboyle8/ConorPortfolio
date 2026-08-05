@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Hayler — Creative Agency & Studio HTML Template</title>
+    <meta name="description" content="Hayler is a premium HTML template for creative agencies and studios. Built on ClaPat Framework — smooth AJAX transitions, GSAP animations, and a clean component system ready to customize.">
+    <meta name="author" content="ClaPat Studio">
+
+    <link rel="canonical" href="https://clapat-templates.com/templates/hayler/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demo.clapat-templates.com/hayler/">
+    <meta property="og:title" content="Hayler — Creative Agency & Studio HTML Template">
+    <meta property="og:description" content="Hayler is a premium HTML template for creative agencies and studios. Built on ClaPat Framework — smooth AJAX transitions, GSAP animations, and a clean component system ready to customize.">
+    <meta property="og:image" content="https://demo.clapat-templates.com/hayler/images/og-image.jpg">
+    <meta property="og:site_name" content="ClaPat Templates">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hayler — Creative Agency & Studio HTML Template">
+    <meta name="twitter:description" content="Hayler is a premium HTML template for creative agencies and studios. Built on ClaPat Framework — smooth AJAX transitions, GSAP animations, and a clean component system ready to customize.">
+    <meta name="twitter:image" content="https://demo.clapat-templates.com/hayler/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Critical CSS — loaded immediately -->
+    <link href="style.css" rel="stylesheet">
+    <link href="css/variables.css" rel="stylesheet">
+    <link href="css/preloader.css" rel="stylesheet">
+
+    <!-- Non-critical CSS — preloaded async -->
+    <link href="css/content.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/content.css" rel="stylesheet"></noscript>
+
+    <link href="css/showcase.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/showcase.css" rel="stylesheet"></noscript>
+
+    <link href="css/portfolio.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/portfolio.css" rel="stylesheet"></noscript>
+
+    <link href="css/shortcodes.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/shortcodes.css" rel="stylesheet"></noscript>
+
+    <link href="css/custom.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/custom.css" rel="stylesheet"></noscript>
+
+    <link href="css/all.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link href="css/all.min.css" rel="stylesheet"></noscript>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+</head>
+
+
+<body class="hidden hidden-ball enable-lenis hayler">
+	
+	<!-- Preloader -->
+	<div id="clapat-preloader" class="preloader-wrap"> 
+
+		<div class="preloader-reveal">
+			<span></span><span></span><span></span><span></span>
+		</div>
+		
+		<div class="preloader-caption">		
+			<div class="preloader-info">
+			  	<span>Page is Loading<span class="dots"></span></span>
+			</div>
+
+			<div class="preloader-percentage">
+				<div class="percentage">                	
+					<span class="number number_1">
+						<span>0</span><span>1</span>
+					</span>
+					<span class="number number_2">
+						<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
+					</span>
+					<span class="number number_3">
+						<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
+					</span>					
+				</div>
+			</div>			
+		</div>
+
+	</div>
+	<!--/Preloader -->
+	
+	
+	<main>
+		<!-- ClaPat Index -->
+		<div class="clapat-index">
+    
+			<!-- Page Content -->
+			<div id="clapat-page-content" class="light-content" data-bgcolor="#0c0c0c">
+
+				<!-- Header -->
+				<header id="clapat-header" class="classic-menu">
+
+					<!-- Graidient -->
+					<div id="header-gradient"></div>
+					<!--/Graidient -->
+
+					<!-- Header Container -->
+					<div id="header-container">
+
+						<!-- Logo -->
+						<div id="clapat-logo" data-ball="hide">
+							<a class="ajax-link" data-type="page-transition" href="index.html">
+								<img class="black-logo" src="images/logo.png" alt="ClaPat Logo">
+								<img class="white-logo" src="images/logo-white.png" alt="ClaPat Logo">
+							</a>
+						</div>
+						<!--/Logo -->
+
+
+						<!-- Navigation -->
+						<nav id="clapat-nav-wrapper"> 
+							<div class="nav-height">          
+								<ul class="clapat-nav">
+									<li class="menu-timeline" data-ball="highlight">
+										<a class="ajax-link" data-type="page-transition" href="index.html">
+											<div class="before-span"><span data-hover="Index">Index</span></div>
+										</a>
+									</li>								
+									<li class="menu-timeline" data-ball="highlight">
+										<a class="ajax-link active" data-type="page-transition" href="#">
+											<div class="before-span"><span data-hover="Works">Works</span></div>
+										</a>
+										<ul>
+											<li><a class="ajax-link active" href="portfolio-carousel.html" data-type="page-transition">Case Studies</a></li>
+											<li><a class="ajax-link" href="portfolio-grid.html" data-type="page-transition">Portfolio</a></li>
+										</ul>
+									</li>
+									<li class="menu-timeline" data-ball="highlight">
+										<a class="ajax-link" data-type="page-transition" href="about.html">
+											<div class="before-span"><span data-hover="Studio">Studio</span></div>
+										</a>
+									</li>
+									<li class="menu-timeline" data-ball="highlight">
+										<a class="ajax-link" data-type="page-transition" href="portfolio-lists.html">
+											<div class="before-span"><span data-hover="Archive">Archive</span></div>
+										</a>
+									</li>
+									<li class="menu-timeline" data-ball="highlight">
+										<a class="ajax-link" data-type="page-transition" href="contact.html">
+											<div class="before-span"><span data-hover="Contact">Contact</span></div>
+										</a>
+									</li>
+								</ul>
+							</div>          
+						</nav>
+						<!--/Navigation -->
+
+
+						<!-- Menu Burger -->
+						<div id="burger-button" class="button-wrap button-link right circle-edge burger-dots" data-sticky>
+							<div class="icon-wrap">
+								<div class="icon-effects parallax-wrap" data-ball-size="grow" data-ball-color="primary">
+									<div class="button-icon parallax-element">                                
+										<div class="burger-icon">
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>                                
+									</div>
+								</div>
+							</div>
+							<div class="text-wrap">
+								<div class="button-text">
+									<span data-hover="Menu">Menu</span>
+								</div>
+							</div>
+						</div>
+						<!--/Menu Burger -->
+
+
+						<!-- Header Buttons -->
+						<div id="header-buttons-wrapper" class="append-to-nav">
+							<div id="header-button" class="button-wrap button-icon-box outline-solid reveal-icon right circle-edge header-element-color" data-sticky>
+								<a target="_blank" href="https://themeforest.net/item/hayler-creative-portfolio-html-template/63381465">
+									<div class="icon-wrap">
+										<div class="icon-effects parallax-wrap">
+											<div class="button-icon parallax-element">
+												<i class="fa-solid fa-arrow-right"></i>
+											</div>
+										</div>
+									</div>
+									<div class="text-wrap">
+										<div class="button-text">
+											<span data-hover="Get Started">Get Started</span>
+										</div>
+									</div>
+								</a> 
+							</div>
+						</div>
+						<!--/Header Buttons -->
+
+					</div>
+					<!-- Header Container -->
+
+				</header>
+				<!--/Header -->
+				
+
+				<!-- Content Scroll -->
+				<div id="content-scroll">           
+
+					<!-- Main Content -->
+					<div id="main-content">                        
+
+						<!-- Main Page Content -->
+						<div id="main-page-content">
+
+							<!-- ClaPat Slider -->
+							<div class="clapat-slider-wrapper showcase-slider-carousel-horizontal">
+								<div class="clapat-slider fit-thumb-screen fit-with-cover" data-ball-drag="horizontal">
+
+									<!-- ClaPat Main Slider -->
+									<div class="clapat-slider-viewport">
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project01.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper">
+															<img src="images/01hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Neo Action</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Branding</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project02.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper" data-video="images/02hero.mp4">
+															<img src="images/02hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Thorned</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Video</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project03.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper">
+															<img src="images/03hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Pure Motion</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Branding</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project04.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper">
+															<img src="images/04hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Arctic Flame</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Branding</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project05.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper">
+															<img src="images/05hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Yolk</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Branding</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project06.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper">
+															<img src="images/06hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Mono Block</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Branding</span></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project07.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper">
+															<img src="images/07hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Kinetic</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Branding</span></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="clapat-slide">
+											<div class="item-content trigger-item" data-ball="hover" data-ball-type="solid" data-ball-color="#fff" data-ball-size="auto" data-ball-radius="rounded" data-ball-info="Discover" data-ball-info-color="#000" data-ball-class="thumb-hover">
+												<div class="item-effects">
+													<a class="item-link" data-type="page-transition" href="project08.html"></a>
+													<div class="item-media trigger-item-link">
+														<div class="item-media-wrapper" data-video="images/08hero.mp4">
+															<img src="images/08hero.jpg" class="item-image" alt="Item Image">
+														</div>
+													</div>                           
+												</div>
+												<div class="item-caption">
+													<div class="item-title"><span>Expedition</span></div>
+													<div class="item-date"><span>2026</span></div>
+													<div class="item-cat"><span data-hover="View Case">Video</span></div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!--/ClaPat Main Slider -->
+									
+									<!-- ClaPat Carousel Caption Wrapper -->
+									<div class="clapat-carousel-caption-wrapper">                                            
+										<div class="clapat-carousel-caption"></div> 
+									</div>
+									<!--/ClaPat Carousel Caption Wrapper -->
+
+								</div>
+
+								<!-- ClaPat Slider Footer -->
+								<div class="clapat-slider-footer fade-slide-element fadeout-element has-border">								
+									<div class="slider-footer-left">
+										<div class="clapat-slider-progress">
+											<div class="progress-info-fill">Drag to Explore</div>
+											<div class="progress-info-empty">Drag to Explore</div>
+										</div>												
+									</div>
+
+									<div class="slider-footer-center">								
+										<div class="clapat-slider-navigation">
+											<div class="button-wrap cp-button-prev">
+												<div class="icon-wrap">
+													<div class="icon-effects parallax-wrap" data-ball-size="match" data-ball-color="primary" data-ball-radius="circle">
+														<div class="button-icon parallax-element">
+															<i class="fa-solid fa-arrow-left"></i>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cp-buttons-caption">Navigate</div>
+											<div class="button-wrap cp-button-next">
+												<div class="icon-wrap">
+													<div class="icon-effects parallax-wrap" data-ball-size="match" data-ball-color="primary" data-ball-radius="circle">
+														<div class="button-icon parallax-element">
+															<i class="fa-solid fa-arrow-right"></i>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="slider-footer-right">
+										<div class="info-text"><span>Case Studies</span></div>
+									</div>
+								</div>
+								<!--/ClaPat Slider Footer -->
+								
+								<div class="cursor-background-reveal" data-radius-hover="200" data-radius-click="400">
+									<span></span>
+								</div>
+								
+							</div>
+							<!--/ClaPat Slider -->
+
+						</div>
+						<!--/Main Page Content -->						
+
+					</div>
+					<!--/Main Content --> 
+
+				</div>
+				<!--/Content Scroll -->            
+
+			</div>    
+			<!--/Page Content -->
+    
+		</div>
+		<!--/ClaPat Index -->
+	</main>
+    
+    
+    <!-- ClaPat Cursor -->
+	<div id="clapat-cursor" data-cursor-zoom="fa fa-plus" data-cursor-play="fa fa-play" data-cursor-pause="fa fa-pause" data-cursor-drag-x="Drag" data-cursor-drag-y="fa-solid fa-arrows-up-down" data-cursor-prev="fa fa-arrow-left" data-cursor-next="fa fa-arrow-right">
+		<div id="ball">
+			<div id="ball-loader"></div>
+		</div>
+	</div>
+	<!--/ClaPat Cursor -->
+	
+    
+    <div class="clapat-cover-layer"></div>	
+	<div class="clapat-rotate-device"></div>
+	
+	<script src="lib/gsap.js"></script>    
+    <script src="lib/lenis.js"></script>
+	
+	<script src="js/preloader.js"></script>
+	<script src="js/slider.js"></script>    
+    <script src="js/common.js"></script>
+    <script src="js/scripts.js"></script>
+
+
+</body>
+</html>

@@ -13,6 +13,7 @@
   <header class="site-header">
     <nav class="navbar portfolio-navbar" aria-label="Primary navigation">
       <div class="container-fluid">
+        <a class="portfolio-wordmark portfolio-wordmark--static" href="#top" aria-label="Conor O'Boyle home">Conor O'Boyle</a>
         <div class="dropdown portfolio-menu ms-auto">
           <button class="portfolio-menu-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span>Menu</span>
@@ -26,6 +27,7 @@
             <li><a class="dropdown-item" href="#releases">Releases</a></li>
             <li><a class="dropdown-item" href="#reel">Reel</a></li>
             <li><a class="dropdown-item" href="#music">Music</a></li>
+            <li><a class="dropdown-item" href="platonic-shapes.html">Platonic Shapes</a></li>
             <li><a class="dropdown-item" href="#about">About</a></li>
             <li><a class="dropdown-item" href="#testimonials">Testimonials</a></li>
             <li><a class="dropdown-item" href="#contact">Contact</a></li>
@@ -36,37 +38,34 @@
   </header>
 
   <main>
-    <section class="portfolio-hero" id="top" aria-label="Fantasia for Strings and Harp by Conor O'Boyle">
-      <video class="portfolio-hero__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-        <source src="assets/video/Fantasia%20Video_720.mp4" type="video/mp4">
-      </video>
-      <div class="portfolio-hero__overlay"></div>
-      <a class="portfolio-wordmark" href="#top" aria-label="Conor O'Boyle home">Conor O'Boyle</a>
+    <section class="portfolio-hero" id="top" aria-label="Conor O'Boyle composer portfolio">
       <div class="portfolio-shell portfolio-hero__content">
-        <p class="portfolio-kicker">New release</p>
-        <h1>Fantasia For Strings &amp; Harp</h1>
-        <p class="portfolio-hero__lead">A concert work by Conor O'Boyle, performed by the European Recording Orchestra.</p>
+        <p class="portfolio-kicker">Composer / Producer / Orchestrator</p>
+        <h1>Conor O'Boyle</h1>
+        <p class="portfolio-hero__lead">Irish composer writing for film, television, concert music, and contemporary classical projects.</p>
         <div class="portfolio-actions">
-          <a class="portfolio-button portfolio-button--primary" href="https://www.youtube.com/watch?v=51RNPisoIxU" target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-play-fill" aria-hidden="true"></i>
-            <span>Watch Video</span>
+          <a class="portfolio-button portfolio-button--primary" href="#releases">
+            <i class="bi bi-disc" aria-hidden="true"></i>
+            <span>Latest Release</span>
           </a>
-          <a class="portfolio-button portfolio-button--secondary" href="#music">
-            <i class="bi bi-music-note-beamed" aria-hidden="true"></i>
-            <span>Listen</span>
+          <a class="portfolio-button portfolio-button--secondary" href="#credits">
+            <i class="bi bi-film" aria-hidden="true"></i>
+            <span>Screen Credits</span>
           </a>
         </div>
-        <p class="portfolio-hero__byline">Conor O'Boyle | Composer / Producer / Orchestrator</p>
-        <a class="portfolio-hero__scroll" href="#browse">Scroll</a>
+        <div class="portfolio-hero__notes" aria-label="Portfolio highlights">
+          <p><strong>Latest release</strong><span>Fantasia For Strings &amp; Harp</span></p>
+          <p><strong>Screen work</strong><span>BBC, Netflix, TG4, Fine Point Films</span></p>
+          <p><strong>Based in</strong><span>Donegal / Derry, Ireland</span></p>
+        </div>
       </div>
     </section>
 
-    <section class="portfolio-index" id="browse" aria-label="Browse Conor O'Boyle works">
+    <section class="portfolio-index" id="browse" aria-label="Featured sections">
       <div class="portfolio-shell portfolio-index__grid">
-        <a href="#releases"><span>Browse the latest release</span><strong>Releases</strong></a>
-        <a href="#credits"><span>Selected work for screen</span><strong>Film &amp; TV</strong></a>
-        <a href="#work"><span>Concert and collaboration catalogue</span><strong>Works</strong></a>
-        <a href="#contact"><span>Availability, reel requests, commissions</span><strong>Contact</strong></a>
+        <a href="#releases"><strong>Fantasia For Strings &amp; Harp</strong><span>Latest concert work</span></a>
+        <a href="#reel"><strong>Selected Listening</strong><span>Screen, orchestral, electronic</span></a>
+        <a href="#contact"><strong>Contact</strong><span>Commissions and reel requests</span></a>
       </div>
     </section>
 
@@ -206,7 +205,9 @@
           </div>
         </article>
         <div class="portfolio-video-embed">
-          <iframe title="Fantasia for Strings and Harp video" src="https://www.youtube.com/embed/51RNPisoIxU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          <iframe width="1280" height="720" title="Fantasia For Strings &amp; Harp" src="https://www.youtube.com/embed/51RNPisoIxU?rel=0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            <a href="https://www.youtube.com/watch?v=51RNPisoIxU">Watch Fantasia For Strings &amp; Harp on YouTube</a>
+          </iframe>
         </div>
         <div class="portfolio-programme-note">
           <p class="portfolio-kicker">Programme Note</p>
@@ -273,17 +274,110 @@
           <h2>Screen Credits</h2>
         </div>
         <div class="portfolio-credit-list">
-          <article class="portfolio-credit-row"><span>2026</span><h3>Stand Up</h3><p>Composer - Fine Point Films</p></article>
-          <article class="portfolio-credit-row"><span>2026</span><h3>Playing Peter</h3><p>Composer - Haus Eight Films</p></article>
-          <article class="portfolio-credit-row"><span>2025</span><h3>The Dodger</h3><p>Composer - Fine Point Films / RTE</p></article>
-          <article class="portfolio-credit-row"><span>2025</span><h3>Minsitter</h3><p>Composer - Brass Neck Films</p></article>
-          <article class="portfolio-credit-row"><span>2024</span><h3>Operation Pablo</h3><p>Composer - Keith O'Grady / Timber Films</p></article>
-          <article class="portfolio-credit-row"><span>2024</span><h3>After The Bomb</h3><p>Composer - Heather Brumley / Better Things Ahead Productions. Best Short Documentary Winner, Galway.</p></article>
-          <article class="portfolio-credit-row"><span>2023</span><h3>The Boxer</h3><p>Composer - Score Draw Music</p></article>
-          <article class="portfolio-credit-row"><span>2023</span><h3>The Agreement</h3><p>Composer - Fine Point Films / RTE</p></article>
-          <article class="portfolio-credit-row"><span>2022</span><h3>Murder in the Badlands</h3><p>Composer - Fine Point Films / BBC</p></article>
-          <article class="portfolio-credit-row"><span>2022</span><h3>HYFIN</h3><p>Composer - Haus Eight Films / Netflix</p></article>
-          <article class="portfolio-credit-row"><span>2021</span><h3>Colmcille: An Naomh Dána</h3><p>Composer - Abú Media Productions / TG4</p></article>
+          <div class="portfolio-credit-row portfolio-credit-row--header" aria-hidden="true">
+            <span>Year</span>
+            <span>Title</span>
+            <span>Role</span>
+            <span>Director</span>
+            <span>Production</span>
+            <span>Notes</span>
+          </div>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2026</span>
+            <h3>Stand Up</h3>
+            <p>Composer</p>
+            <p>Sean Mullan / Michael Barwise</p>
+            <p>Fine Point Films</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2026</span>
+            <h3>Brú</h3>
+            <p>Composer</p>
+            <p>Keith O' Grady</p>
+            <p>Brassneck Productions / TG4</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2026</span>
+            <h3>Playing Peter</h3>
+            <p>Composer</p>
+            <p>Michael Barwise</p>
+            <p>Haus Eight Films</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2025</span>
+            <h3>The Dodger</h3>
+            <p>Composer</p>
+            <p>Trevor Birney</p>
+            <p>Fine Point Films / RTE</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2025</span>
+            <h3>Mindsitter</h3>
+            <p>Composer</p>
+            <p>Didem Durak Akser</p>
+            <p>Brass Neck Films</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2024</span>
+            <h3>Operation Pablo</h3>
+            <p>Composer</p>
+            <p>Keith O'Grady</p>
+            <p>Timber Films</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2024</span>
+            <h3>After The Bomb</h3>
+            <p>Composer</p>
+            <p>Heather Brumley</p>
+            <p>Better Things Ahead Productions</p>
+            <p>Best Short Documentary Winner, Galway. Best Short Documentary Winner, Beverley Hills Film Festival.</p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2023</span>
+            <h3>The Boxer</h3>
+            <p>Composer</p>
+            <p>Brian Drysdale</p>
+            <p>Score Draw Music</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2023</span>
+            <h3>The Agreement</h3>
+            <p>Composer</p>
+            <p>Trevor Birney</p>
+            <p>Fine Point Films / RTE</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2022</span>
+            <h3>Murder in the Badlands</h3>
+            <p>Composer</p>
+            <p>Trevor Birney</p>
+            <p>Fine Point Films / BBC</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2022</span>
+            <h3>HYFIN</h3>
+            <p>Composer</p>
+            <p>Sean Mullan</p>
+            <p>Haus Eight Films / Netflix</p>
+            <p></p>
+          </article>
+          <article class="portfolio-credit-row">
+            <span class="portfolio-credit-year">2021</span>
+            <h3>Colmcille: An Naomh Dána</h3>
+            <p>Composer</p>
+            <p>Andrew Gallimore</p>
+            <p>Abú Media Productions / TG4</p>
+            <p></p>
+          </article>
         </div>
       </div>
     </section>
