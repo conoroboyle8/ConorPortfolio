@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#f8f9fa">
-	<title>Conor O'Boyle | Portfolio</title>
-	<meta name="description" content="A lean one-page portfolio for Conor O'Boyle, built from the Rezume template foundation.">
+	<title>Conor O'Boyle | Composer</title>
+	<meta name="description" content="Conor O'Boyle is an Irish composer, producer, and orchestrator writing for film, television, concert music, and artist-led projects.">
 	<meta name="author" content="Conor O'Boyle">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Conor O'Boyle | Portfolio">
-	<meta property="og:description" content="Creative computing, web design, and visual portfolio work by Conor O'Boyle.">
+	<meta property="og:title" content="Conor O'Boyle | Composer">
+	<meta property="og:description" content="Irish composer, producer, and orchestrator writing for screen, concert music, and contemporary projects.">
 	<meta property="og:image" content="rezume/images/mee.png">
 
 	<link rel="stylesheet" href="rezume/fonts/icomoon/style.css">
@@ -167,9 +167,9 @@
 			text-transform: uppercase;
 			font-size: clamp(30px, 4.4vw, 64px);
 			font-weight: 100 !important;
-			letter-spacing: 0.48em;
+			letter-spacing: 0.36em;
 			line-height: 1.35;
-			text-indent: 0.48em;
+			text-indent: 0.36em;
 			white-space: nowrap;
 		}
 
@@ -208,18 +208,14 @@
 		}
 
 		.reference-card img {
-			width: 96px;
-			height: 96px;
+			width: 82px;
+			height: 82px;
 			margin: 0 auto;
 			object-fit: cover;
 			border-radius: 50%;
-			filter: grayscale(1);
-		}
-
-		.reference-card img.reference-image--lift {
-			filter: grayscale(1) brightness(1.2) contrast(1.16) saturate(1.04);
-			image-rendering: auto;
-			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+			filter: grayscale(1) brightness(1.05) contrast(0.96);
+			opacity: 0.9;
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
 		}
 
 		.reference-card blockquote {
@@ -251,10 +247,23 @@
 			line-height: 1.45;
 		}
 
+		#section-proof {
+			padding-bottom: 4em;
+		}
+
+		#section-work {
+			padding-top: 4em;
+		}
+
 		.work-strip {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 18px;
+		}
+
+		.work-item {
+			min-width: 0;
+			text-align: center;
 		}
 
 		.work-strip .work-image {
@@ -275,6 +284,16 @@
 
 		.work-strip .work-image:hover img {
 			transform: scale(1.04);
+		}
+
+		.work-caption {
+			margin: 14px 0 0;
+			color: var(--portfolio-ink);
+			font-size: clamp(13px, 1vw, 17px);
+			font-weight: 200;
+			letter-spacing: 0.14em;
+			line-height: 1.45;
+			text-transform: uppercase;
 		}
 
 		.work-audio {
@@ -343,9 +362,9 @@
 			margin-bottom: 3px;
 			overflow: hidden;
 			color: var(--portfolio-ink);
-			font-size: 13px;
+			font-size: 12px;
 			font-weight: 300;
-			letter-spacing: 0.16em;
+			letter-spacing: 0.1em;
 			line-height: 1.4;
 			text-overflow: ellipsis;
 			text-transform: uppercase;
@@ -357,12 +376,22 @@
 			margin-bottom: 9px;
 			overflow: hidden;
 			color: var(--portfolio-muted);
-			font-size: 11px;
-			letter-spacing: 0.13em;
+			font-size: 10px;
+			letter-spacing: 0.08em;
 			line-height: 1.35;
 			text-overflow: ellipsis;
 			text-transform: uppercase;
 			white-space: nowrap;
+		}
+
+		.work-audio-label {
+			margin: 70px 0 0;
+			color: var(--portfolio-muted);
+			font-size: 11px;
+			letter-spacing: 0.16em;
+			line-height: 1.5;
+			text-align: center;
+			text-transform: uppercase;
 		}
 
 		.audio-range {
@@ -419,9 +448,8 @@
 			color: var(--portfolio-ink);
 			font-size: 13px;
 			font-weight: 300;
-			letter-spacing: 0.15em;
+			letter-spacing: 0.02em;
 			line-height: 1.5;
-			text-transform: uppercase;
 		}
 
 		.video-embed {
@@ -440,31 +468,20 @@
 			border: 0;
 		}
 
-		.project-notes {
-			margin-top: 48px;
-		}
-
-		.project-note {
-			margin-bottom: 34px;
-		}
-
-		.project-note h3 {
-			font-size: clamp(15px, 1.1vw, 19px);
-			font-weight: 200;
-			letter-spacing: 0.18em;
-			line-height: 1.55;
-			text-align: center;
-			text-transform: uppercase;
-		}
-
-		.project-note p {
-			max-width: 780px;
-			font-size: 18px;
-			color: var(--portfolio-muted);
-		}
-
 		.about-image {
 			border-radius: 8px;
+		}
+
+		#section-about {
+			padding-bottom: 2.4em;
+		}
+
+		#section-contact {
+			padding-top: 2.6em;
+		}
+
+		#section-about .row.mb-5 {
+			margin-bottom: 0 !important;
 		}
 
 		.about-heading-row {
@@ -501,8 +518,49 @@
 			color: rgba(0, 0, 0, 0.55);
 		}
 
+		.contact-layout {
+			max-width: 1040px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+			gap: 64px;
+			align-items: start;
+		}
+
+		.contact-copy p {
+			margin-bottom: 0;
+			color: var(--portfolio-muted);
+			font-size: clamp(17px, 1.45vw, 23px);
+			font-weight: 200;
+			line-height: 1.65;
+		}
+
+		.site-form {
+			padding-top: 4px;
+		}
+
+		.form-hp {
+			position: absolute;
+			left: -9999px;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+		}
+
+		.site-form .form-control {
+			border: 0 !important;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.22) !important;
+			border-radius: 0;
+			background: transparent;
+			box-shadow: none !important;
+		}
+
+		.site-form textarea.form-control {
+			min-height: 120px;
+		}
+
 		.site-form .form-group:last-child {
-			text-align: center;
+			text-align: left;
 		}
 
 		.site-footer {
@@ -541,11 +599,10 @@
 		}
 
 		[data-bs-theme="dark"] .reference-card blockquote,
-		[data-bs-theme="dark"] .project-note h3 {
+		[data-bs-theme="dark"] .work-caption {
 			color: #fff;
 		}
 
-		[data-bs-theme="dark"] .project-note p,
 		[data-bs-theme="dark"] .contact-note {
 			color: rgba(255, 255, 255, 0.65);
 		}
@@ -571,8 +628,20 @@
 			color: rgba(255, 255, 255, 0.56);
 		}
 
+		[data-bs-theme="dark"] .work-audio-label {
+			color: rgba(255, 255, 255, 0.56);
+		}
+
 		[data-bs-theme="dark"] .work-video-heading span {
 			color: #fff;
+		}
+
+		[data-bs-theme="dark"] .contact-copy p {
+			color: rgba(255, 255, 255, 0.66);
+		}
+
+		[data-bs-theme="dark"] .site-form .form-control {
+			border-bottom-color: rgba(255, 255, 255, 0.28) !important;
 		}
 
 		[data-bs-theme="dark"] .audio-range {
@@ -600,6 +669,11 @@
 			.work-video {
 				max-width: 620px;
 				grid-template-columns: 1fr;
+			}
+
+			.contact-layout {
+				grid-template-columns: 1fr;
+				gap: 38px;
 			}
 		}
 
@@ -716,27 +790,6 @@
 						</blockquote>
 					</article>
 					<article class="reference-card" data-aos="fade-up" data-aos-delay="100">
-						<img class="reference-image--lift" src="rezume/images/testimonials/rory-friers.png" alt="Rory Friers">
-						<blockquote>
-							"Conor's enthusiasm and passion for great art is only matched by his ability to produce it."
-							<cite>Rory Friers <span>Composer, guitarist at And So I Watch You From Afar</span></cite>
-						</blockquote>
-					</article>
-					<article class="reference-card" data-aos="fade-up" data-aos-delay="200">
-						<img src="rezume/images/testimonials/christopher-young.png" alt="Christopher Young">
-						<blockquote>
-							"Ready to take over Hollywood."
-							<cite>Christopher Young <span>Composer / Spider-Man 3, Hellraiser, Ghost Rider</span></cite>
-						</blockquote>
-					</article>
-					<article class="reference-card" data-aos="fade-up">
-						<img class="reference-image--lift" src="rezume/images/testimonials/andy-hill.png" alt="Andy Hill">
-						<blockquote>
-							"His work and his thought consistently demonstrates openness, curiosity and innovation."
-							<cite>Andy Hill <span>Director of Studies at the Film Scoring Academy of Europe</span></cite>
-						</blockquote>
-					</article>
-					<article class="reference-card" data-aos="fade-up" data-aos-delay="100">
 						<img src="rezume/images/testimonials/sean-mullan.png" alt="Sean Mullan">
 						<blockquote>
 							"His work ethic offers a professional, committed and tailored style to storytelling."
@@ -744,7 +797,7 @@
 						</blockquote>
 					</article>
 					<article class="reference-card" data-aos="fade-up" data-aos-delay="200">
-						<img class="reference-image--lift" src="rezume/images/testimonials/andrew-tully.png" alt="Andrew Tully">
+						<img src="rezume/images/testimonials/andrew-tully.png" alt="Andrew Tully">
 						<blockquote>
 							"An extremely talented composer who delivers on time, even when the pressure of a deadline looms."
 							<cite>Andrew Tully <span>Producer at Fine Point Films</span></cite>
@@ -763,43 +816,33 @@
 				</div>
 
 				<div class="work-strip">
-					<a class="work-image" href="https://open.spotify.com/album/349vGhhbd1OCVNS4yrrHeR?si=wN3JJzqQSV6ElJM6KZ3L5Q" aria-label="Open Fantasia on Spotify" target="_blank" rel="noopener noreferrer">
-						<img src="rezume/images/work/fantasia.png" alt="Fantasia">
-					</a>
-					<a class="work-image" href="https://open.spotify.com/album/2rO8k84yCS55qeT3hnZ0e0?si=YdDBVmrrQweQJ7u_ZvmfWA" aria-label="Open Murder In The Badlands on Spotify" target="_blank" rel="noopener noreferrer">
-						<img src="rezume/images/work/murder-in-the-badlands.png" alt="Murder In The Badlands">
-					</a>
-					<a class="work-image" href="https://open.spotify.com/album/3X7VD83oW77mhcYWVgklJ4?si=k3QvEVqjS3ithYZI_Ul2-w" aria-label="Open Autumn Impressions on Spotify" target="_blank" rel="noopener noreferrer">
-						<img src="rezume/images/work/autumn-impressions.png" alt="Autumn Impressions">
-					</a>
-					<a class="work-image" href="https://open.spotify.com/album/0Wwv7VroUMKR9XzhYBdHrh?si=nXpkkNMLTSy2mgvjh4kW-Q" aria-label="Open Welcome to Platonic Shapes on Spotify" target="_blank" rel="noopener noreferrer">
-						<img src="rezume/images/work/welcome-to-platonic-shapes.png" alt="Welcome to Platonic Shapes">
-					</a>
+					<article class="work-item" data-aos="fade-up">
+						<a class="work-image" href="https://open.spotify.com/album/349vGhhbd1OCVNS4yrrHeR?si=wN3JJzqQSV6ElJM6KZ3L5Q" aria-label="Open Fantasia on Spotify" target="_blank" rel="noopener noreferrer">
+							<img src="rezume/images/work/fantasia.png" alt="Fantasia">
+						</a>
+						<h3 class="work-caption">Fantasia</h3>
+					</article>
+					<article class="work-item" data-aos="fade-up" data-aos-delay="100">
+						<a class="work-image" href="https://open.spotify.com/album/2rO8k84yCS55qeT3hnZ0e0?si=YdDBVmrrQweQJ7u_ZvmfWA" aria-label="Open Murder In The Badlands on Spotify" target="_blank" rel="noopener noreferrer">
+							<img src="rezume/images/work/murder-in-the-badlands.png" alt="Murder In The Badlands">
+						</a>
+						<h3 class="work-caption">Murder In The Badlands</h3>
+					</article>
+					<article class="work-item" data-aos="fade-up" data-aos-delay="200">
+						<a class="work-image" href="https://open.spotify.com/album/3X7VD83oW77mhcYWVgklJ4?si=k3QvEVqjS3ithYZI_Ul2-w" aria-label="Open Autumn Impressions on Spotify" target="_blank" rel="noopener noreferrer">
+							<img src="rezume/images/work/autumn-impressions.png" alt="Autumn Impressions">
+						</a>
+						<h3 class="work-caption">Autumn Impressions</h3>
+					</article>
+					<article class="work-item" data-aos="fade-up" data-aos-delay="300">
+						<a class="work-image" href="https://open.spotify.com/album/0Wwv7VroUMKR9XzhYBdHrh?si=nXpkkNMLTSy2mgvjh4kW-Q" aria-label="Open Welcome to Platonic Shapes on Spotify" target="_blank" rel="noopener noreferrer">
+							<img src="rezume/images/work/welcome-to-platonic-shapes.png" alt="Welcome to Platonic Shapes">
+						</a>
+						<h3 class="work-caption">Welcome to Platonic Shapes</h3>
+					</article>
 				</div>
 
-				<div class="row project-notes">
-					<div class="col-lg-3 col-md-6">
-						<article class="project-note" data-aos="fade-up">
-							<h3>Fantasia</h3>
-						</article>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<article class="project-note" data-aos="fade-up" data-aos-delay="100">
-							<h3>Murder In The Badlands</h3>
-						</article>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<article class="project-note" data-aos="fade-up" data-aos-delay="200">
-							<h3>Autumn Impressions</h3>
-						</article>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<article class="project-note" data-aos="fade-up" data-aos-delay="300">
-							<h3>Welcome to Platonic Shapes</h3>
-						</article>
-					</div>
-				</div>
-
+				<p class="work-audio-label" data-aos="fade-up">Selected Listening</p>
 				<div class="work-audio" aria-label="Selected listening" data-aos="fade-up">
 					<div class="audio-player">
 						<button class="audio-toggle" type="button" aria-label="Play Murder In The Badlands"><span class="audio-icon" aria-hidden="true"></span></button>
@@ -929,12 +972,11 @@
 								<img src="rezume/images/social/imdb-official.svg" alt="IMDb">
 							</a>
 						</div>
-						<p>Conor O'Boyle is an Irish composer, producer and orchestrator from Derry/Londonderry.</p>
-						<p>His work for film and television includes the BBC documentary series <em>Murder in the Badlands</em>, Netflix's <em>HYFIN</em>, TG4's <em>Colmille: An Naomí Dána</em>, and RTÉ/Fine Point Films' <em>The Agreement</em> and <em>The Dodger</em>. Recent screen credits include <em>The Boxer</em>, <em>Operation Pablo</em>, <em>Minsitter</em>, <em>Playing Peter</em> and <em>Stand Up</em>. His score for <em>After the Bomb</em> formed part of a film recognised with Best Short Documentary at Galway Film Fleadh in 2024 and Best Short Documentary at Beverly Hills Film Festival in 2025.</p>
-						<p>Alongside his screen work, Conor maintains an active concert music practice spanning orchestral, piano, string quartet and chamber works. <em>Fantasia for Strings and Harp</em> reimagines the expressive colours of the Romantic orchestra through a contemporary lens, while <em>Autumn Impressions</em> explores a more intimate piano-led language. Across these works, his writing is shaped by lyrical melody, harmonic warmth, fluid musical structures and a close attention to texture and colour.</p>
-						<p>As a producer and recording artist, Conor's work also extends into contemporary music. <em>Welcome to Platonic Shapes</em> explores jazz, pop, rock and electronic influences, bringing together songcraft, instrumental colour and modern production. He also contributed string arrangements to <em>Jettison!</em>, the 2022 project by Northern Ireland's And So I Watch You From Afar, nominated for the Northern Ireland Music Prize. The album received widespread critical acclaim, with <em>Kerrang!</em> describing it as "a magnificent blend of punchy post-rock and ethereal orchestration", while <em>Veil of Sound</em> praised how the string arrangements supported the other instruments and gave the score "a really rich feel".</p>
-						<p>His music has been recorded at Windmill Lane Studios in Dublin and by the European Recording Orchestra in Sofia, and performed at venues including The Sage Gateshead and London's Southbank Centre.</p>
-						<p>Conor is also a lecturer with the Film Scoring Academy of Europe, teaching on the Masters in Film Scoring and Film Scoring Summer Programme.</p>
+						<p>Conor O'Boyle is an Irish composer, producer and orchestrator from Derry/Londonderry, writing music shaped by melody, atmosphere and the emotional movement of a story.</p>
+						<p>For screen, his work moves between restrained underscore and larger cinematic gesture, with credits including <em>Murder in the Badlands</em>, <em>HYFIN</em>, <em>The Agreement</em>, <em>The Dodger</em>, <em>The Boxer</em>, <em>Operation Pablo</em> and <em>Stand Up</em>. His score for <em>After the Bomb</em> formed part of a film recognised at Galway Film Fleadh and Beverly Hills Film Festival.</p>
+						<p>His concert music spans orchestral, piano, string quartet and chamber writing. Works such as <em>Fantasia for Strings and Harp</em> and <em>Autumn Impressions</em> draw on Romantic colour, lyrical line and contemporary texture.</p>
+						<p>As a producer and recording artist, Conor also works in contemporary music. <em>Welcome to Platonic Shapes</em> brings together jazz, pop, rock and electronic influences, while his string arrangements for And So I Watch You From Afar's <em>Jettison!</em> sit between song, score and orchestral atmosphere.</p>
+						<p>His music has been recorded at Windmill Lane Studios in Dublin and by the European Recording Orchestra in Sofia, and performed at venues including The Sage Gateshead and London's Southbank Centre. He also teaches with the Film Scoring Academy of Europe.</p>
 						<p>Based in Derry/Donegal. Works worldwide.</p>
 					</div>
 				</div>
@@ -949,26 +991,34 @@
 							<h2>Contact <strong>Me</strong></h2>
 						</div>
 					</div>
+				</div>
 
-					<div class="col-md-8 col-lg-6 mx-auto">
-						<form method="post" action="contact.php" class="site-form">
-							<div class="form-group mb-3">
-								<input name="name" type="text" class="form-control px-3 py-2" placeholder="First name" autocomplete="given-name" required>
-							</div>
-							<div class="form-group mb-3">
-								<input name="last_name" type="text" class="form-control px-3 py-2" placeholder="Last name" autocomplete="family-name">
-							</div>
-							<div class="form-group mb-3">
-								<input name="email" type="email" class="form-control px-3 py-2" placeholder="Email" autocomplete="email" required>
-							</div>
-							<div class="form-group mb-4">
-								<textarea name="comments" class="form-control px-3 py-2" cols="30" rows="6" placeholder="Write a message" required></textarea>
-							</div>
-							<div class="form-group">
-								<input type="submit" class="btn btn-primary px-4 py-2" value="Send Message">
-							</div>
-						</form>
+				<div class="contact-layout">
+					<div class="contact-copy">
+						<p>Let's collaborate on a project. Send a note with a little context, and I will get back to you soon.</p>
 					</div>
+
+					<form method="post" action="contact.php" class="site-form">
+						<div class="form-hp" aria-hidden="true">
+							<label for="project_website">Website</label>
+							<input id="project_website" name="project_website" type="text" tabindex="-1" autocomplete="off">
+						</div>
+						<div class="form-group mb-3">
+							<input name="name" type="text" class="form-control px-0 py-2" placeholder="First name" autocomplete="given-name" required>
+						</div>
+						<div class="form-group mb-3">
+							<input name="last_name" type="text" class="form-control px-0 py-2" placeholder="Last name" autocomplete="family-name">
+						</div>
+						<div class="form-group mb-3">
+							<input name="email" type="email" class="form-control px-0 py-2" placeholder="Email" autocomplete="email" required>
+						</div>
+						<div class="form-group mb-4">
+							<textarea name="comments" class="form-control px-0 py-2" cols="30" rows="5" placeholder="Write a message" required></textarea>
+						</div>
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary px-4 py-2" value="Send Message">
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>

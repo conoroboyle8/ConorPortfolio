@@ -1,58 +1,107 @@
 <?php
 
-if (!$_POST) exit;
+session_start();
 
-// Email address verification
-function isEmail($email) {
-    return (preg_match("/^[-_.[:alnum:]]+@((([[:alnum:]]|[[:alnum:]][[:alnum:]-]*[[:alnum:]])\.)+(ad|ae|aero|af|ag|ai|al|am|an|ao|aq|ar|arpa|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|biz|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|com|coop|cr|cs|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|edu|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gh|gi|gl|gm|gn|gov|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|in|info|int|io|iq|ir|is|it|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|me|mg|mh|mil|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|museum|mv|mw|mx|my|mz|na|name|nc|ne|net|nf|ng|ni|nl|no|np|nr|nt|nu|nz|om|org|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|pro|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)$|(([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5])\.){3}([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5]))$/i", $email));
+function respond($message, $is_success = false, $status_code = 200) {
+    http_response_code($status_code);
+    echo '<div class="' . ($is_success ? 'success_message heading-3' : 'error_message') . '">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</div>';
+    exit;
 }
 
-// Sanitize inputs — compatible PHP 5.x+
-$first_name = strip_tags(trim(isset($_POST['name'])      ? $_POST['name']      : ''));
-$last_name  = strip_tags(trim(isset($_POST['last_name']) ? $_POST['last_name'] : ''));
+function post_value($key) {
+    return isset($_POST[$key]) ? $_POST[$key] : '';
+}
+
+function clean_text($value, $max_length, $allow_newlines = false) {
+    $value = strip_tags((string) $value);
+    $value = str_replace(array("\r\n", "\r"), "\n", $value);
+
+    if ($allow_newlines) {
+        $value = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/', '', $value);
+        $value = preg_replace("/[ \t]+\n/", "\n", $value);
+        $value = preg_replace("/\n{4,}/", "\n\n\n", $value);
+    } else {
+        $value = preg_replace('/[\r\n\t]+/', ' ', $value);
+        $value = preg_replace('/[\x00-\x1F\x7F]+/', '', $value);
+    }
+
+    $value = trim(preg_replace('/[ ]{2,}/', ' ', $value));
+
+    if (strlen($value) > $max_length) {
+        $value = substr($value, 0, $max_length);
+    }
+
+    return trim($value);
+}
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    respond('Please send your message using the contact form.', false, 405);
+}
+
+// Honeypot field: real visitors should leave this empty.
+if (trim(post_value('project_website')) !== '') {
+    respond('Message sent.', true);
+}
+
+$now = time();
+$window_seconds = 600;
+$max_attempts = 3;
+
+if (!isset($_SESSION['contact_attempts']) || !is_array($_SESSION['contact_attempts'])) {
+    $_SESSION['contact_attempts'] = array();
+}
+
+$_SESSION['contact_attempts'] = array_filter($_SESSION['contact_attempts'], function ($timestamp) use ($now, $window_seconds) {
+    return ($now - $timestamp) < $window_seconds;
+});
+
+if (count($_SESSION['contact_attempts']) >= $max_attempts) {
+    respond('Thanks for your patience. Please wait a few minutes before sending another message.', false, 429);
+}
+
+$first_name = clean_text(post_value('name'), 80);
+$last_name  = clean_text(post_value('last_name'), 80);
 $name       = trim($first_name . ' ' . $last_name);
-$email      = strip_tags(trim(isset($_POST['email'])     ? $_POST['email']     : ''));
-$comments   = strip_tags(trim(isset($_POST['comments'])  ? $_POST['comments']  : ''));
+$email      = trim(post_value('email'));
+$comments   = clean_text(post_value('comments'), 3000, true);
 
-// Validation
 if ($name === '') {
-    echo '<div class="error_message">Attention! You must enter your name.</div>';
-    exit();
+    respond('Please add your name so I know who the message is from.');
 }
 
-if ($email === '') {
-    echo '<div class="error_message">Attention! Please enter a valid email address.</div>';
-    exit();
-}
-
-if (!isEmail($email)) {
-    echo '<div class="error_message">Attention! You have entered an invalid e-mail address, try again.</div>';
-    exit();
+if ($email === '' || preg_match('/[\r\n]/', $email) || strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    respond('Please add a valid email address so I can reply to you.');
 }
 
 if ($comments === '') {
-    echo '<div class="error_message">Attention! Please enter your message.</div>';
-    exit();
+    respond('Please add a short message about the project or enquiry.');
 }
 
-$address = "conoroboyle8@gmail.com";
+$address = 'conoroboyle8@gmail.com';
+$from_address = 'conoroboyle8@gmail.com';
+$from_name = '"Conor O\'Boyle Website"';
 
-$e_subject = 'You\'ve been contacted by ' . $name . '.';
+$subject_name = clean_text($name, 120);
+$e_subject = "Website enquiry from " . $subject_name;
 
-$e_body    = "You have been contacted by $name, their additional message is as follows." . "\r\n\r\n";
-$e_content = "\"$comments\"" . "\r\n\r\n";
-$e_reply   = "You can contact $name via email, $email";
+$msg = "You have been contacted by " . $name . "." . "\r\n\r\n";
+$msg .= "Message:" . "\r\n" . $comments . "\r\n\r\n";
+$msg .= "Reply to: " . $email . "\r\n";
+$msg = wordwrap($msg, 70);
 
-$msg = wordwrap($e_body . $e_content . $e_reply, 70);
+$headers = array(
+    'From: ' . $from_name . ' <' . $from_address . '>',
+    'Reply-To: ' . $email,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8'
+);
 
-$headers  = "From: $email" . "\r\n";
-$headers .= "Reply-To: $email" . "\r\n";
-$headers .= "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type: text/plain; charset=utf-8" . "\r\n";
-$headers .= "Content-Transfer-Encoding: quoted-printable" . "\r\n";
+$_SESSION['contact_attempts'][] = $now;
 
-if (mail($address, $e_subject, $msg, $headers)) {
-    echo '<div class="success_message heading-3">Message sent.</div>';
-} else {
-    echo '<div class="error_message">There was an error sending your message. Please try again.</div>';
+$mail_sent = getenv('CONTACT_FORM_TEST_MODE') === '1' ? true : mail($address, $e_subject, $msg, implode("\r\n", $headers));
+
+if ($mail_sent) {
+    respond('Message sent.', true);
 }
+
+respond('Sorry, the message could not be sent just now. Please try again in a moment.', false, 500);
