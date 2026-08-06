@@ -77,8 +77,8 @@ if ($comments === '') {
     respond('Please add a short message about the project or enquiry.');
 }
 
-$address = 'conoroboyle8@gmail.com';
-$from_address = 'conoroboyle8@gmail.com';
+$address = 'info@conoroboylemusic.com';
+$from_address = 'info@conoroboylemusic.com';
 $from_name = '"Conor O\'Boyle Website"';
 
 $subject_name = clean_text($name, 120);

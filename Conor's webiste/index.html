@@ -7,10 +7,60 @@
 	<title>Conor O'Boyle | Composer</title>
 	<meta name="description" content="Conor O'Boyle is an Irish composer, producer, and orchestrator writing for film, television, concert music, and artist-led projects.">
 	<meta name="author" content="Conor O'Boyle">
+	<link rel="canonical" href="https://conoroboylemusic.com/">
 	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://conoroboylemusic.com/">
 	<meta property="og:title" content="Conor O'Boyle | Composer">
 	<meta property="og:description" content="Irish composer, producer, and orchestrator writing for screen, concert music, and contemporary projects.">
-	<meta property="og:image" content="rezume/images/mee.png">
+	<meta property="og:image" content="https://conoroboylemusic.com/rezume/images/mee.png">
+	<meta property="og:image:alt" content="Conor O'Boyle">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Conor O'Boyle | Composer">
+	<meta name="twitter:description" content="Irish composer, producer, and orchestrator writing for screen, concert music, and contemporary projects.">
+	<meta name="twitter:image" content="https://conoroboylemusic.com/rezume/images/mee.png">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Conor O'Boyle",
+		"url": "https://conoroboylemusic.com/",
+		"image": "https://conoroboylemusic.com/rezume/images/mee.png",
+		"jobTitle": "Composer, Producer and Orchestrator",
+		"homeLocation": {
+			"@type": "Place",
+			"name": "Derry/Donegal"
+		},
+		"description": "Irish composer, producer and orchestrator writing for film, television, concert music and artist-led projects.",
+		"sameAs": [
+			"https://open.spotify.com/artist/6i6RS0FdsxKjVvHj84qUpX",
+			"https://music.apple.com/gb/artist/conor-oboyle/1483590957",
+			"https://www.youtube.com/@conoroboyle1175",
+			"https://www.instagram.com/conoroboylemusic/",
+			"https://www.imdb.com/name/nm12770242/"
+		],
+		"knowsAbout": [
+			"Film scoring",
+			"Television music",
+			"Concert music",
+			"Orchestration",
+			"Music production"
+		],
+		"workExample": [
+			{
+				"@type": "CreativeWork",
+				"name": "Murder In The Badlands"
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Fantasia for Strings and Harp"
+			},
+			{
+				"@type": "CreativeWork",
+				"name": "Welcome to Platonic Shapes"
+			}
+		]
+	}
+	</script>
 
 	<link rel="stylesheet" href="rezume/fonts/icomoon/style.css">
 	<link rel="stylesheet" href="rezume/css/bootstrap.css">
@@ -563,6 +613,63 @@
 			text-align: left;
 		}
 
+		.form-status {
+			min-height: 1.5em;
+			margin: 16px 0 0;
+			color: var(--portfolio-muted);
+			font-size: 14px;
+			line-height: 1.5;
+		}
+
+		.form-status.is-error {
+			color: #8a2d2d;
+		}
+
+		.message-modal {
+			position: fixed;
+			inset: 0;
+			z-index: 1100;
+			display: grid;
+			place-items: center;
+			padding: 24px;
+			background: rgba(0, 0, 0, 0.32);
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.22s ease;
+		}
+
+		.message-modal.is-visible {
+			opacity: 1;
+			pointer-events: auto;
+		}
+
+		.message-modal__panel {
+			width: min(100%, 440px);
+			padding: 34px;
+			border-radius: 8px;
+			background: var(--portfolio-paper);
+			box-shadow: 0 22px 70px rgba(0, 0, 0, 0.2);
+			text-align: center;
+			transform: translateY(12px);
+			transition: transform 0.22s ease;
+		}
+
+		.message-modal.is-visible .message-modal__panel {
+			transform: translateY(0);
+		}
+
+		.message-modal__panel p {
+			margin: 0 0 24px;
+			color: var(--portfolio-ink);
+			font-size: 18px;
+			font-weight: 200;
+			line-height: 1.6;
+		}
+
+		.message-modal__close {
+			min-width: 112px;
+		}
+
 		.site-footer {
 			padding: 1.5em 0;
 		}
@@ -642,6 +749,22 @@
 
 		[data-bs-theme="dark"] .site-form .form-control {
 			border-bottom-color: rgba(255, 255, 255, 0.28) !important;
+		}
+
+		[data-bs-theme="dark"] .form-status {
+			color: rgba(255, 255, 255, 0.66);
+		}
+
+		[data-bs-theme="dark"] .form-status.is-error {
+			color: #f0a5a5;
+		}
+
+		[data-bs-theme="dark"] .message-modal__panel {
+			background: #151515;
+		}
+
+		[data-bs-theme="dark"] .message-modal__panel p {
+			color: #fff;
 		}
 
 		[data-bs-theme="dark"] .audio-range {
@@ -998,7 +1121,7 @@
 						<p>Let's collaborate on a project. Send a note with a little context, and I will get back to you soon.</p>
 					</div>
 
-					<form method="post" action="contact.php" class="site-form">
+					<form method="post" action="contact.php" class="site-form" id="contact-form">
 						<div class="form-hp" aria-hidden="true">
 							<label for="project_website">Website</label>
 							<input id="project_website" name="project_website" type="text" tabindex="-1" autocomplete="off">
@@ -1018,11 +1141,19 @@
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary px-4 py-2" value="Send Message">
 						</div>
+						<p class="form-status" id="contact-form-status" aria-live="polite"></p>
 					</form>
 				</div>
 			</div>
 		</section>
 	</main>
+
+	<div class="message-modal" id="contact-success-modal" role="dialog" aria-modal="true" aria-labelledby="contact-success-message" aria-hidden="true">
+		<div class="message-modal__panel">
+			<p id="contact-success-message">Your message has been received and I will get back to you as soon as possible.</p>
+			<button class="btn btn-primary px-4 py-2 message-modal__close" type="button">Close</button>
+		</div>
+	</div>
 
 	<footer class="site-footer">
 		<div class="container">
@@ -1123,6 +1254,99 @@
 
 				updateTime();
 			});
+
+			const contactForm = document.getElementById("contact-form");
+			const contactStatus = document.getElementById("contact-form-status");
+			const successModal = document.getElementById("contact-success-modal");
+			const closeModalButton = successModal ? successModal.querySelector(".message-modal__close") : null;
+
+			const getResponseMessage = (html) => {
+				const wrapper = document.createElement("div");
+				wrapper.innerHTML = html;
+				return wrapper.textContent.trim();
+			};
+
+			const openSuccessModal = () => {
+				if (!successModal || !closeModalButton) {
+					return;
+				}
+
+				successModal.classList.add("is-visible");
+				successModal.setAttribute("aria-hidden", "false");
+				closeModalButton.focus();
+			};
+
+			const closeSuccessModal = () => {
+				if (!successModal) {
+					return;
+				}
+
+				successModal.classList.remove("is-visible");
+				successModal.setAttribute("aria-hidden", "true");
+			};
+
+			if (contactForm && contactStatus) {
+				contactForm.addEventListener("submit", async (event) => {
+					event.preventDefault();
+
+					const submitButton = contactForm.querySelector('[type="submit"]');
+					const originalButtonText = submitButton ? submitButton.value : "";
+
+					contactStatus.textContent = "";
+					contactStatus.classList.remove("is-error");
+
+					if (submitButton) {
+						submitButton.disabled = true;
+						submitButton.value = "Sending...";
+					}
+
+					try {
+						const response = await fetch(contactForm.action, {
+							method: "POST",
+							body: new FormData(contactForm),
+							headers: {
+								"X-Requested-With": "XMLHttpRequest"
+							}
+						});
+						const html = await response.text();
+						const message = getResponseMessage(html);
+
+						if (response.ok && html.includes("success_message")) {
+							contactForm.reset();
+							openSuccessModal();
+						} else {
+							contactStatus.textContent = message || "Please check the form and try again.";
+							contactStatus.classList.add("is-error");
+						}
+					} catch (error) {
+						contactStatus.textContent = "Sorry, the message could not be sent just now. Please try again in a moment.";
+						contactStatus.classList.add("is-error");
+					} finally {
+						if (submitButton) {
+							submitButton.disabled = false;
+							submitButton.value = originalButtonText;
+						}
+					}
+				});
+			}
+
+			if (closeModalButton) {
+				closeModalButton.addEventListener("click", closeSuccessModal);
+			}
+
+			if (successModal) {
+				successModal.addEventListener("click", (event) => {
+					if (event.target === successModal) {
+						closeSuccessModal();
+					}
+				});
+
+				document.addEventListener("keydown", (event) => {
+					if (event.key === "Escape" && successModal.classList.contains("is-visible")) {
+						closeSuccessModal();
+					}
+				});
+			}
 		})();
 	</script>
 </body>
